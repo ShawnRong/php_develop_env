@@ -1,0 +1,11 @@
+---
+- name: Install nginx
+  apt: name=nginx state=present
+
+- name: Copy nginx backup
+  command: cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak creates=/etc/nginx/sites-available/default.bak
+
+- name: Copy nginx configuration
+  sudo: yes
+  template: src=default.conf dest=/etc/nginx/sites-available/default
+  notify: restart nginx

@@ -1,0 +1,13 @@
+# Add APT Source
+# - name: Add repository into sources list. 
+#   sudo: true 
+#   apt_repository:
+#     repo: deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+#     state: present
+
+#   apt_repository:
+#     repo: deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+#     state: present
+
+# - name: Add repositoryt into sources list. 
+#   sudo: true  
