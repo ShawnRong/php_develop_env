@@ -37,7 +37,10 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "./www", "/src/www/html/"
+  config.vm.synced_folder "./www", "/src/www/html/", :nfs => true
+  config.vm.synced_folder "../project1", "/src/www/html/project1/", :nfs => true
+  config.vm.synced_folder "../project2", "/src/www/html/project2/", :nfs => true
+
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

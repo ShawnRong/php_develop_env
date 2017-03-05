@@ -9,3 +9,17 @@
   sudo: yes
   template: src=default.conf dest=/etc/nginx/sites-available/default
   notify: restart nginx
+
+# - name: Create vhost Directory
+#   sudo: yes
+#   command: mkdir /etc/nginx/vhost
+
+- name: Copy nginx configuration vhost
+  sudo: yes
+  template: src=project1.conf dest=/etc/nginx/sites-enabled/project1.conf
+  notify: restart nginx
+
+- name: Copy nginx configuration vhost
+  sudo: yes
+  template: src=project2.conf dest=/etc/nginx/sites-enabled/project2.conf
+  notify: restart nginx
