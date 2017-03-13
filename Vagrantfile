@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "./www", "/src/www/html/", :nfs => true
   config.vm.synced_folder "../project1", "/src/www/html/project1/", :nfs => true
   config.vm.synced_folder "../project2", "/src/www/html/project2/", :nfs => true
-
+  config.vm.synced_folder "../project3", "/src/www/html/project3/", :nfs => true  
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -65,9 +65,9 @@ Vagrant.configure("2") do |config|
       v.customize ["modifyvm", :id, "--cpus", 2]
   end
 
-  config.vm.provision :shell, :inline => "sed -i 's#archive.ubuntu.com#mirrors.163.com#' /etc/apt/sources.list"
-  config.vm.provision :shell, :inline => "sed -i 's#security.ubuntu.com#mirrors.163.com#' /etc/apt/sources.list"
-  config.vm.provision :shell, :inline => "apt-get update"
+  # config.vm.provision :shell, :inline => "sed -i 's#archive.ubuntu.com#mirrors.163.com#' /etc/apt/sources.list"
+  # config.vm.provision :shell, :inline => "sed -i 's#security.ubuntu.com#mirrors.163.com#' /etc/apt/sources.list"
+  # config.vm.provision :shell, :inline => "apt-get update"
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
   # such as FTP and Heroku are also available. See the documentation at

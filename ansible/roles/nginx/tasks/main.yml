@@ -23,3 +23,8 @@
   sudo: yes
   template: src=project2.conf dest=/etc/nginx/sites-enabled/project2.conf
   notify: restart nginx
+
+- name: Copy nginx configuration vhost
+  sudo: yes
+  template: src=project3.conf dest=/etc/nginx/sites-enabled/project3.conf
+  notify: restart nginx
